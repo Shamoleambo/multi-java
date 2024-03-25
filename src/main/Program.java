@@ -1,18 +1,18 @@
 package main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Program {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		Scanner sc = new Scanner(new File("c:\\users\\tidgo\\documentos\\testolino.txt"));
-		while (sc.hasNextLine()) {
-			String data = sc.nextLine();
-			System.out.println(data);
+	public static void main(String[] args) throws IOException {
+		String qqr = "Mano do Ceu";
+		String[] arr = qqr.split("");
+		String newStr = "";
+		for (int i = arr.length - 1; i >= 0; i--) {
+			newStr += arr[i];
 		}
-		sc.close();
+
+		System.out.println(newStr);
 	}
 
 }
