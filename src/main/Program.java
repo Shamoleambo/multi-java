@@ -1,20 +1,18 @@
 package main;
 
-import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Program {
 
 	public static void main(String[] args) {
 		try {
-			File myFile = new File("c:\\users\\tidgo\\Documentos\\testolino.txt");
-			if (myFile.createNewFile()) {
-				System.out.println("File created: " + myFile.getName());
-			} else {
-				System.out.println("File Already exists");
-			}
+			FileWriter fw = new FileWriter("c:\\users\\tidgo\\documentos\\testolino.txt");
+
+			fw.write("I wanna write files all day my dude!");
+			fw.close();
 		} catch (IOException e) {
-			e.printStackTrace();
+
 		}
 
 	}
