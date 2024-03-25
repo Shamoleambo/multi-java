@@ -1,20 +1,16 @@
 package main;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.File;
 
 public class Program {
 
 	public static void main(String[] args) {
-		try {
-			FileWriter fw = new FileWriter("c:\\users\\tidgo\\documentos\\testolino.txt");
-
-			fw.write("I wanna write files all day my dude!");
-			fw.close();
-		} catch (IOException e) {
-
+		File myFile = new File("c:\\users\\tidgo\\documentos\\testolino.txt");
+		if (myFile.delete()) {
+			System.out.println("Successfully deleted the file " + myFile.getName());
+		} else {
+			System.out.println("Failed to delete the file");
 		}
-
 	}
 
 }
