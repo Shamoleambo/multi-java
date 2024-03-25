@@ -1,24 +1,18 @@
 package main;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Program {
 
-	public static void main(String[] args) {
-		try (BufferedReader reader = new BufferedReader(
-				new FileReader("c:\\users\\tidgo\\documentos\\testolino.txt"))) {
-
-			String line = reader.readLine();
-			while (line != null) {
-				System.out.println(line);
-				line = reader.readLine();
-			}
-			reader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner sc = new Scanner(new File("c:\\users\\tidgo\\documentos\\testolino.txt"));
+		while (sc.hasNextLine()) {
+			String data = sc.nextLine();
+			System.out.println(data);
 		}
+		sc.close();
 	}
 
 }
