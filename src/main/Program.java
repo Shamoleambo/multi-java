@@ -1,15 +1,24 @@
 package main;
 
-import utils.MyFile;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Program {
 
 	public static void main(String[] args) {
-		MyFile myFile = new MyFile("c:\\users\\tidgo\\documentos\\testolino.txt");
-		
-		myFile.createFile();
-		myFile.writeFile("Testing\nlots\nof\nthings!");
-		myFile.readFile();
+		try (BufferedReader reader = new BufferedReader(
+				new FileReader("c:\\users\\tidgo\\documentos\\testolino.txt"))) {
+
+			String line = reader.readLine();
+			while (line != null) {
+				System.out.println(line);
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
