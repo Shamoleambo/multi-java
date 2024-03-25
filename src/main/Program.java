@@ -10,7 +10,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		try {
-			File myFile = new File("c:\\users\\tidgo\\Documentos\\teste.txt");
+			File myFile = new File("c:\\users\\tidgo\\Documentos\\tete.txt");
 			Scanner sc = new Scanner(myFile);
 
 			Map<String, Integer> people = new HashMap<String, Integer>();
@@ -28,7 +28,7 @@ public class Program {
 				System.out.println();
 			});
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			throw new ReadException("Something went wrong with the file reading fun process");
 		}
 
 	}
