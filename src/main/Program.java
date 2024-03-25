@@ -1,16 +1,15 @@
 package main;
 
-import java.io.File;
+import utils.MyFile;
 
 public class Program {
 
 	public static void main(String[] args) {
-		File myFile = new File("c:\\users\\tidgo\\documentos\\testolino.txt");
-		if (myFile.delete()) {
-			System.out.println("Successfully deleted the file " + myFile.getName());
-		} else {
-			System.out.println("Failed to delete the file");
-		}
+		MyFile myFile = new MyFile("c:\\users\\tidgo\\documentos\\testolino.txt");
+		
+		myFile.createFile();
+		myFile.writeFile("Testing\nlots\nof\nthings!");
+		myFile.readFile();
 	}
 
 }
